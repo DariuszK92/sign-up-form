@@ -212,7 +212,7 @@ input{
     width: 200px;
     height: 1.6rem;
     background-color: var(--first-color);
-    border: 1px solid rgb(218, 104, 63);;
+    border: 1px solid rgb(218, 104, 63);
     font-weight: 500;
     padding: 7px;
 }
@@ -226,7 +226,7 @@ button{
     width: 220px;
     height: 2.5rem;
     font-weight: 600;
-    
+    margin-top: 15px;
     border: 3px solid rgb(218, 104, 63);
     background-color: var(--first-color);   
 }
@@ -267,12 +267,47 @@ input:invalid +span::after{
     font-size: 13px;
     content: "invalid";
 }
+input:valid{
+    border: 2px green solid;
+}
+
+input:invalid{
+    border: 2px red solid;
+}
+
 
 input:placeholder-shown +span::after{
     display: none;
     content: "";
 }
+input:placeholder-shown{
+    border: 1px solid rgb(218, 104, 63);
+}
 
-input:valid{
-    border: 2px green solid;
+input + span + span{
+    position: relative;
+}
+
+input[type="password"]:focus:invalid + span + span::after{
+    display: block;
+    width: 300px;
+    position: absolute;
+    top: -7px;
+    left: -40px;
+    font-size: 12px;
+    background-color: red;
+    color: white;
+    content: "Must include: UpperCase, LowerCase, Number/ SpecialChar and min 8 Chars";
+}
+
+input[type="text"]:focus:invalid + span + span::after{
+    display: block;
+    width: 220px;
+    position: absolute;
+    top: -7px;
+    left: 0;
+    font-size: 12px;
+    background-color: blue;
+    color: white;
+    content: "Must include min 2 Chars";
 }
