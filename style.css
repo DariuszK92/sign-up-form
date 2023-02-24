@@ -1,313 +1,395 @@
-*{
+/*==============================
+        Table of contents
+1. Root styling
+2. Common styles
+3. Main elements styling (html, body, containers)
+4. Child elements styling (Logo, h1)
+5. Form styling
+  5.1 Basic form styling
+  5.2 Label styling
+  5.3 Button styling
+  5.4 Input styling
+    5.4.1 Input basic styling
+    5.4.2 Input validity styling
+    5.4.3 Input info styling
+===============================*/
+
+
+/*==============================
+      1. Root styling
+===============================*/
+
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    --first-color:rgb(20, 19, 19);
-    
+    --first-color: rgb(20, 19, 19);
+    --error-color: red;
+    --info-color: blue;
+    --success-color:green;
     color: aliceblue;
-}
-/*==============================
-        Common styling
-===============================*/
-p,
-section h1,
-input,
-form,
-button,
-ul li:last-child,
-ul li:nth-last-child(2){
+  }
+  /*==============================
+        2. Common styles
+  ===============================*/
+  p,
+  section h1,
+  input,
+  form,
+  button,
+  ul li:last-child,
+  ul li:nth-last-child(2) {
     margin-bottom: 10px;
-}
-
-
-input,
-button {
-    border-radius: 7px;
-}
-
-
-
-button{
-    font-size: 1.2rem;
-}
-
-section h1{
-    font-size: 1.5rem;
-}
-
-li > p{
-    font-size: 10px;
-}
-
-
-/*==============================
-    Main elements styling
-===============================*/
-
-html{
+  }
+  
+  section h1 {
+    font-size: 1.6rem;
+  }
+  
+  /*================================================
+   3. Main elements styling (html, body, containers)
+  ==================================================*/
+  
+  html {
     height: 100%;
     display: flex;
-}
-body{
-    
+  }
+  body {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     flex-basis: auto;
-}
-.background{  
+  }
+  .background {
     position: relative;
     flex-grow: 3;
     background-image: url(img/background.jpg);
     background-size: cover;
-    
-}
-
-main{
+  }
+  
+  main {
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
     background-color: var(--first-color);
     flex-grow: 6;
     text-align: center;
-}
-
-
-@media (min-width: 800px) {
-    body{
-    flex-direction: row;
+  }
+  
+  
+  
+  @media (min-width: 800px) {
+    body {
+      flex-direction: row;
     }
-    .background{  
-        flex-grow: 2;
+    .background {
+      flex-grow: 2;
     }
-    main{
-    flex-grow: 2;
+    main {
+      flex-grow: 2;
     }
-}
-
-/*==============================
-    Child elements styling
-===============================*/
-
-
-.background section{
+  }
+  
+  /*==============================
+   4. Child elements styling (Logo, h1)
+  ===============================*/
+  
+  .background section {
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: rgb(0,0,0,0.6);
+    background-color: rgb(0, 0, 0, 0.6);
     z-index: 2;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap:10px;
-}
-
-.logo{
+    gap: 10px;
+  }
+  
+  .logo {
     height: 100%;
-}
-
-.logo img{
+  }
+  
+  .logo img {
     margin-top: 25%;
     object-fit: fill;
-   max-height: 60%;
-    z-index:3
-}
-
-@font-face {
+    max-height: 60%;
+    z-index: 3;
+  }
+  
+  @font-face {
     font-family: Planet, sans-serif;
     src: url(font/PLANK___.TTF);
-}
-
-span {
+  }
+  
+  span {
     font-family: Planet, sans-serif;
     font-size: 1.7rem;
     font-weight: 900;
-    }
-
-
-main{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative
-    
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,100&display=swap');
-
-section h1{
-    
+  }
+  
+  
+  
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,100&display=swap");
+  
+  section h1 {
     text-align: center;
     font-family: Poppins, sans-serif;
-    
-}
-
-@media (min-width: 800px) {
-    .background section{
-        top:15%;
-        height: 15%;
+  }
+  
+  @media (min-width: 800px) {
+    .background section {
+      top: 15%;
+      height: 15%;
     }
-    
-}
-/*==============================
-        Form styling
-===============================*/
-
-
-
-form{
-    
-    width: 90%;
-    margin-left: 5%;
-    border-radius: 7px;
-    background-color: rgb(80, 77, 77);
-    display: flex;
-    justify-content: center;
-    position: relative;  
-}
-
-@media (min-width: 800px) {
-    form{
+  }
+  
+  
+  /*==============================
+        5. Form styling
+  ===============================*/
+  
+    /*==============================
+          5.1. Basic form styling
+    ===============================*/
+    form {
+      width: 90%;
+      margin-left: 5%;
+      background-color: rgb(80, 77, 77);
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+  
+    input,
+    button,
+    form {
+      border-radius: 7px;
+    }
+  
+   
+  
+    @media (min-width: 800px) {
+      form {
         width: 60%;
         margin-left: 20%;
+      }
     }
-    
-}
-
-ul{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-li{
-    display: flex;
-    flex-direction: column;
-   
-}
-
-ul li:first-child{
-    margin-top: 15px;
-}
-
-
-
-p{
-    text-align: center;
-    font-weight: 600;
-   
-}
-
-/*==============================
-        Input styling
-===============================*/
-label{
-   
-    font-size: 20px;
+  
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  
+    li {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    ul li:first-child {
+      margin-top: 15px;
+    }
+  
+    li p {
+      font-size: 14px;
+    }
+    p {
+      text-align: center;
+      font-weight: 600;
+    }
+  a {
+    color: rgb(218, 104, 63);
+    text-decoration: none;
+  }
+  a:focus,
+  a:hover {
+    color: aliceblue;
+  }
+  
+    /*==============================
+            5.2 Label styling
+    ===============================*/
+  label {
+    font-size: 17px;
     font-family: Poppins, sans-serif;
     display: inline-block;
     text-align: left;
-}
-input{
-    appearance: none;
-    width: 200px;
-    height: 1.6rem;
-    background-color: var(--first-color);
-    border: 1px solid rgb(218, 104, 63);
-    font-weight: 500;
-    padding: 7px;
-}
-input:focus{
-    background-color: rgb(118, 123, 148);
-}
-
-button{
+  }
+  
+  /*==============================
+            5.3 Button styling
+    ===============================*/
+  
+   button {
+      font-size: 1.2rem;
+      appearance: none;
+      width: 220px;
+      height: 2.5rem;
+      font-weight: 600;
+      margin-top: 15px;
+      border: 3px solid rgb(218, 104, 63);
+      background-color: var(--first-color);
+    }
+    button:hover,
+    button:focus {
+      background-color: rgb(218, 104, 63);
+    }
+  /*==============================
+        5.4 Input styling
+    ===============================*/
+    /*==============================
+        5.4.1 Input basic styling
+    ===============================*/
+  
+    input {
+      appearance: none;
+      width: 200px;
+      height: 1.6rem;
+      background-color: var(--first-color);
+      font-weight: 500;
+      padding: 7px;
+    }
+    input:valid {
+      border: 2px green solid;
+    }
+  
+    input:invalid {
+      border: 2px red solid;
+    }
+  
+    input:invalid + span + span::after{
+      display: block;
+          width: 100px;
+          position: absolute;
+          bottom: 40px;
+          right: 0px;
+          font-size: 12px;
+          background-color: var(--error-color);
+          color: white;
+          content:"invalid"
+    }
+  
     
-    appearance: none;
-    width: 220px;
-    height: 2.5rem;
-    font-weight: 600;
-    margin-top: 15px;
-    border: 3px solid rgb(218, 104, 63);
-    background-color: var(--first-color);   
-}
-
-button:hover, button:focus{
-    background-color: rgb(218, 104, 63);
-}
-a{
-    color: rgb(218, 104, 63);
-    text-decoration: none;
-}
-a:focus, a:hover{
-    color: aliceblue;
-}
-li p{
-    font-size: 14px;
-}
-input + span{
+  
+    input:placeholder-shown,
+    input:placeholder-shown:focus{
+      border: 2px solid rgb(218, 104, 63);
+    }
+  
+    input:focus {
+      background-color: rgb(118, 123, 148);
+    }
+  
+    input + span {
+      position: relative;
+    }
+    /*==============================
+        5.4.2 Input valid styling
+    ===============================*/
+  
+  input:focus:valid + span + span::after{
+        display: block;
+        width: 100px;
+        position: absolute;
+        bottom: 40px;
+        right: 0px;
+        font-size: 12px;
+        background-color: var(--success-color);
+        color: white;
+        content:"valid"
+      }
+   
+  input:valid + span + span::after{
+        display: block;
+        width: 100px;
+        position: absolute;
+        bottom: 40px;
+        right: 0px;
+        font-size: 12px;
+        background-color: var(--success-color);
+        color: white;
+        content:"valid"
+      }
+   
+  input + span + span {
     position: relative;
-}
-
-input:valid +span::after{
-    position: absolute;
-    right: -44px;
-    top: -34px;
-    background-color: green;
-    padding: 4px;
-    font-size: 13px;
-    content: "valid";
-}
-
-input:invalid +span::after{
-    position: absolute;
-    right: -54px;
-    top: -34px;
-    background-color: red  ;
-    padding: 4px;
-    font-size: 13px;
-    content: "invalid";
-}
-input:valid{
-    border: 2px green solid;
-}
-
-input:invalid{
-    border: 2px red solid;
-}
-
-
-input:placeholder-shown +span::after{
-    display: none;
-    content: "";
-}
-input:placeholder-shown{
-    border: 1px solid rgb(218, 104, 63);
-}
-
-input + span + span{
-    position: relative;
-}
-
-input[type="password"]:focus:invalid + span + span::after{
-    display: block;
-    width: 300px;
-    position: absolute;
-    top: -7px;
-    left: -40px;
-    font-size: 12px;
-    background-color: red;
-    color: white;
-    content: "Must include: UpperCase, LowerCase, Number/ SpecialChar and min 8 Chars";
-}
-
-input[type="text"]:focus:invalid + span + span::after{
-    display: block;
-    width: 220px;
-    position: absolute;
-    top: -7px;
-    left: 0;
-    font-size: 12px;
-    background-color: blue;
-    color: white;
-    content: "Must include min 2 Chars";
-}
+  }
+  
+   input:placeholder-shown + span + span::after{
+      display: block;
+          width: 100px;
+          position: absolute;
+          bottom: 40px;
+          right: 0px;
+          font-size: 12px;
+          background-color: var(--error-color);
+          color: white;
+          content:""
+    }
+   /*==============================
+        5.4.3 Input info styling
+    ===============================*/
+  
+      input:focus:invalid + span + span::after{
+        display: block;
+        width: 100px;
+        position: absolute;
+        bottom: 40px;
+        right: 0px;
+        font-size: 12px;
+        background-color: var(--info-color);
+        color: white;
+      }
+  
+      input[type="password"]:focus:invalid + span + span::after {
+          content: "- 8 characters \A - uppercase \A - lowercase \A - Nb|spec char";
+         white-space: pre; /* or pre-wrap */
+      }
+  
+      input[type="text"]:focus:invalid + span + span::after {
+        content: "Min 2 characters";
+      }
+  
+    input[type="email"]:focus:invalid + span + span::after {
+        content: "Example format: example@example.com";
+         width: 145px;
+      }
+   input[type="tel"]:focus:invalid + span + span::after {
+        content: "Min 8 digits";
+         width: 145px;
+      }
+  input[type="tel"]:placeholder-shown + span + span::after{
+      display: block;
+      content:""
+    }
+  
+  
+  .wrong-pass + span::after{
+        display: block;
+        width: 100px;
+        position: absolute;
+        bottom: 40px;
+        right: 0px;
+        font-size: 12px;
+        background-color: red;
+        color: white;
+        content: "Passwords not match"
+      }
+  
+  .match-pass + span::after{
+        display: block;
+        width: 100px;
+        position: absolute;
+        bottom: 40px;
+        right: 0px;
+        font-size: 12px;
+        background-color: green;
+        color: white;
+        content: "Correct!"
+      }
+  
+  

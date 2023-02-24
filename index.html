@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-up form</title>
     <link rel="stylesheet" href="style.css">
+ 
 </head>
 <body>
     <div class="background">
@@ -20,7 +21,7 @@
                 Join best tech community!
             </h1>
             
-            <form action="" method="get">
+            <form action="https://github.com/DariuszK92" method="get">
 
                 <ul>
                     <li>
@@ -30,11 +31,11 @@
                         <span></span>
                     </li>
                     <li><label for="lname">Last name*</label>
-                    <input type="text"  id="lname" placeholder=" " minlength="2" pattern="[a-zA-Z0-9]+" required><span></span></li>
+                    <input type="text"  id="lname" placeholder=" " minlength="2" pattern="[a-zA-Z0-9]+" required><span></span><span></span></li>
                     <li><label for="email">Email*</label>
-                     <input type="email" id="mail" placeholder=" " required/><span></span></li>
+                     <input type="email" id="mail" placeholder=" " required/><span></span><span></span></li>
                      <li><label for="phone">Phone</label>
-                    <input type="tel" id="phone" pattern="[0-9]{9}" placeholder=" "/><span></span></li>
+                    <input type="tel" id="phone" placeholder=" " minlength="8" pattern="(?:(?:(?:\+|00)?48)|(?:\(\+?48\)))?(?:1[2-8]|2[2-69]|3[2-49]|4[1-8]|5[0-9]|6[0-35-9]|[7-8][1-9]|9[145])\d{7}" /><span></span><span></span></li>
                     <li><label for="password">Password*</label>
                     <input type="password" id="password" placeholder=" " pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required/><span></span><span></span></li>
                     <li><label for="password2">Confirm password*</label>
@@ -42,11 +43,17 @@
                     <li>
                         <p>*Points marked with '*' are required</p>
                     </li>
+                  <li>
+              <button type="submit">Create account</button>
+              </li>
                 </ul>
+              
             </form>
-            <button>Create account</button>
+            
             <p>Already have an account? <a href="">Log In</a></p>
         </section>
     </main>
+    <script src="script.js"></script>
+  
 </body>
 </html>
